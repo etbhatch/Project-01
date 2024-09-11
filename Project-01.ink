@@ -77,7 +77,7 @@ You have {crown} coral crown
 
 ==darkest_cave==
 You now stand in almost complete darkness. Slight fear and panic begin to settle in. You are trapped. The silence stabbing into your ears and the century old air burns your lungs.
-{crown > 0: You notice and old altar down here in the darkness. You feel the crown you hold almost magnetized to it, like it's calling for it.}
+{flower < 1:{crown > 0: You notice and old altar down here in the darkness. You feel the crown you hold almost magnetized to it, like it's calling for it.}}
 *{tranquility >= 2}[Try to escape] ->dark_cave
 *{tranquility < 2} [Try to escape] -> cave_abyss
 *[Accept, go deeper] -> cave_abyss
@@ -207,7 +207,7 @@ You stroll down the beach, taking in the salty breeze. You're reminded of your l
 You look around, trying to remember where that cove was. You see an odd piece of coral, sticking out from the ground. You rememeber placing it there long ago so that you may find your way. You press onward, finding the path you once took. You now stand in a small cove, from here the moon seems to beam directly onto the sand you stand on, illuminating your soul.
     ~tranquility = tranquility + 1
 * [Return to the shores] -> beach_shore
-* [Search for the treasure] -> crown_pickup
+* [Search for the treasure] -> secret_treasure
 
 == secret_treasure ==
 You look around, reminiscing. You find a small box tucked away behind a rock. The box has a crescent moon depicted on it. You open up the box, finding a crown made of coral within. 
