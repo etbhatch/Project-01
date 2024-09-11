@@ -22,6 +22,7 @@ VAR time = -1 //  0 Early Evening, 1 Late Evening, 2 Past Midnight, 3 Witching H
 VAR seashell = 0
 VAR tranquility =0
 VAR crown =0
+VAR flower =0
 
 -> beach_shore
 
@@ -76,9 +77,11 @@ You have {crown} coral crown
 
 ==darkest_cave==
 You now stand in almost complete darkness. Slight fear and panic begin to settle in. You are trapped. The silence stabbing into your ears and the century old air burns your lungs.
+{crown > 0: You notice and old altar down here in the darkness. You feel the crown you hold almost magnetized to it, like it's calling for it.}
 *{tranquility >= 2}[Try to escape] ->dark_cave
 *{tranquility < 2} [Try to escape] -> cave_abyss
 *[Accept, go deeper] -> cave_abyss
+*{crown > 0} [Present the crown before the altar] ->crown_altar
 
 ==cave_abyss==
 You have utterly lost yourself in a dark void. One without light and without hope. You can't even hear the allure of the Ocean's Song anymore. You have totally vanished from this world. No desire...and no sense of self.
@@ -183,7 +186,7 @@ Your mother accepts the seashell with tears in her eyes, though she fakes a smil
 *[Reach out for the tree] -> tree_on_the_hill
 
 ==tree_on_the_hill ==
-You step forward towards the tree. The sadness turns slowly into hope. You know that this is all you can offer. You place the coral crown atop the gravestone...remembering what they meant to you. You can't be sure if this is truly the life you wished for...but, it's the life you have.
+You step forward towards the tree. The sadness turns slowly into hope. You know that this is all you can offer. You place the coral crown atop the gravestone...remembering what they meant to you. {flower > 0: The flower now within the crown seems fitting, "new beginnings". That is what your mother once said the hyacinth represented.} You can't be sure if this is truly the life you wished for...but, it's the life you have.
 Perhaps...this was the answer you longed for all this time. The answer to the meaning of life. The truth scares you, but at the same time, gives you peace. Life inherently has no meaning. The purpose of our lives is to find something so meaningful, that we wish to call it our entire reason for living. So that in the end, we can take pride in how we met them.
 -> END
 
@@ -221,6 +224,12 @@ You decide to take the crown with you, hoping it will bless you with fortune on 
 You now have {crown} coral crown
 
 ->beach_shore
+
+==crown_altar==
+You present the crown before the altar, memories flood your mind. You remember glimpses of your life, both good and bad. You notice a small flower now within the front of the crown, a purple hyacinth. You feel closer to them now, more than ever.
+    ~flower = flower +1
+*[Return home with the crown] -> crown_home
+*[Return to the darkness] -> darkest_cave
 
 == function advance_time ==
 
