@@ -109,7 +109,7 @@ you have {seashell} seashell
 -> beach_shore
 
 ==sprint_cave==
-You ran, trying to break free from the calling sea. You're out of breath, gasping for air. The air tastes old, stale, and damp.{seashell == 1: You must have dropped the shell during your sprint.} {tranquility > 3: You must have ran straight into the cave.}You know that if you head back now, your father should be waiting with open arms.
+You ran, trying to break free from the calling sea. You're out of breath, gasping for air. The air tastes old, stale, and damp.{seashell == 1: You must have dropped the shell during your sprint.} {tranquility > 3: You must have ran straight into the cave.} You know that if you head back now, your father should be waiting with open arms.
 
     ~seashell = 0
 you have {seashell} seashells
